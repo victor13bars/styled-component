@@ -1,13 +1,27 @@
 import React from 'react';
-import styled, {css} from 'styled-components'
+import styled, {css, keyframes} from 'styled-components'
 
-const StyledButton = styled.button`
+const rotateAnimation = keyframes`
+    0%{
+    transform:rotate(0deg);
+    }
+    100%{
+    transform:rotate(360deg);
+    }
+`
+
+const StyledButton = styled.button.attrs(props => ({
+    outlined: true
+}))`
     border:none;
     padding:10px 15px;
     font-size:18px;
     cursor:pointer;
     &:focus {
         outline:none;
+    }
+    &:hover{
+        animation:${rotateAnimation} 1s infinite linear;
     }
     align-self:${props => props.align || 'stretch'};
     
