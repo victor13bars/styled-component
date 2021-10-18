@@ -29,9 +29,9 @@ const StyledButton = styled.button.attrs(props => ({
         color:${props => props.color || 'white'};
         background:${props => props.background || 'white'};
     `}
-        ${props => props.outlined && css`
-        color:${props => props.color || 'white'};
-        border:1px solid ${props => props.color || 'white'};
+    ${props => props.outlined && css`
+        color:${props => props.color || props.theme.colors.primary};
+        border:1px solid ${props => props.color || props.theme.colors.primary};
         background:transparent;
     `}
 `
